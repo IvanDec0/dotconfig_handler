@@ -1,0 +1,59 @@
+# Config Handler Configuration File
+
+# -----------------------------------------------
+# PATHS
+# -----------------------------------------------
+
+# Directory containing configuration files to sync
+config_dir: "/home/username/.config"
+
+# Directory for the git repository
+repo_dir: "/home/username/.config_sync_repo"
+
+# -----------------------------------------------
+# SYNC SETTINGS
+# -----------------------------------------------
+
+# Interval between checking for changes (e.g., 5s, 1m, 2h)
+sync_interval: "5s"
+
+# -----------------------------------------------
+# INCLUDE/EXCLUDE PATTERNS
+# -----------------------------------------------
+
+# Directories/files to include (using glob patterns)
+# If not specified, all files will be included except those matching exclude patterns
+include:
+  - "i3/**" # All files in i3 directory and subdirectories
+  - "polybar/**" # All files in polybar directory
+  - "nvim/**/*.vim" # All .vim files in nvim directory and subdirectories
+  - "zsh/.zshrc" # Specific file
+  - "tmux/tmux.conf" # Specific file
+  - "bash/.bash*" # All bash files starting with .bash
+
+# Directories/files to exclude (using glob patterns)
+# These take precedence over include patterns
+exclude:
+  - "**/*.log" # Exclude all log files
+  - "**/.git/**" # Exclude all git directories
+  - "**/cache/**" # Exclude all cache directories
+  - "**/node_modules/**" # Exclude all node_modules directories
+  - "**/*.tmp" # Exclude all temporary files
+  - "**/*history*" # Exclude history files
+  - "**/plugins/**" # Exclude plugin directories
+
+# -----------------------------------------------
+# OPERATION MODES
+# -----------------------------------------------
+
+# Run once and exit (useful for cron jobs or manual syncs)
+run_once: false
+
+# Only perform sync without starting watcher
+sync_only: false
+
+# Sync interval in seconds
+sync_interval: 5s
+
+# Enable verbose logging
+verbose: false

@@ -1,0 +1,50 @@
+config_dir: /home/ivan/.config
+exclude:
+    - .git
+    - .gitignore
+    - node_modules
+    - npm
+    - yarn
+    - pnpm
+    - BraveSoftware
+    - google-chrome
+    - google-chrome-for-testing
+    - chromium
+    - Chromium
+    - Code
+    - Code - Insiders
+    - vscode-sqltools
+    - JetBrains
+    - nvim
+    - Electron
+    - Discord
+    - discord
+    - WebCord
+    - Slack
+    - Teams
+    - Docker Desktop
+    - docker
+    - Postman
+    - MongoDB Compass
+    - go
+    - vlc
+    - spotify
+    - obs-studio
+    - VirtualBox
+    - GitKraken
+    - github-copilot
+    - gh-copilot
+    - configstore
+    - filezilla
+    - obsidian
+    - libreoffice
+    - cache
+    - Cache
+    - caches
+    - CachedData
+include: []
+repo_dir: /home/ivan/.config_sync_repo
+run_once: false
+sync_interval: 5s
+sync_only: false
+verbose: false
