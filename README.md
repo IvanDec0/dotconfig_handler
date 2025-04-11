@@ -35,19 +35,19 @@ Config Handler monitors your Linux configuration files (by default in `~/.config
 1. Clone this repository:
 
    ```
-   git clone https://github.com/IvanDec0/dotconfig_automatic.git
+   git clone https://github.com/IvanDec0/dotconfig_handler.git
    ```
 
 2. Build the application:
 
    ```
-   cd dotconfig_automatic
-   go build -o dotconfig_automatic
+   cd dotconfig_handler
+   go build -o dotconfig_handler
    ```
 
 3. Run the application:
    ```
-   ./dotconfig_automatic
+   ./dotconfig_handler
    ```
 
 ## Command-Line Arguments
@@ -56,7 +56,7 @@ Config Handler supports the following command-line arguments:
 
 ```
 Usage:
-  ./config_handler [flags]
+  ./dotconfig_handler [flags]
 
 Flags:
   -c, --config-file string       Configuration file path (default "~/.config_handler/config.yaml")
@@ -78,19 +78,19 @@ Examples:
 
 ```bash
 # Sync specific directories only
-./config_handler --include="i3,polybar,nvim"
+./dotconfig_handler --include="i3,polybar,nvim"
 
 # Exclude certain directories
-./config_handler --exclude="*cache*,*.log"
+./dotconfig_handler --exclude="*cache*,*.log"
 
 # Custom sync interval
-./config_handler --sync-interval=10s
+./dotconfig_handler --sync-interval=10s
 
 # Run once without continuous monitoring
-./config_handler --run-once
+./dotconfig_handler --run-once
 
 # Verbose mode
-./config_handler -v
+./dotconfig_handler -v
 ```
 
 ## Configuration File
@@ -103,11 +103,6 @@ Example configuration file:
 # Paths
 config_dir: "/home/username/.config"
 repo_dir: "/home/username/.config_sync_repo"
-
-# GitHub settings
-github_repo_url: "https://github.com/username/configs.git"
-github_username: "yourusername"
-github_token: "your_token"
 
 # Sync settings
 sync_interval: "5s"
@@ -133,7 +128,7 @@ When you run the application for the first time, it will prompt you for:
 
 After providing this information, the application will:
 
-- Save your credentials securely in a `.env` file in `dotconfig_automatic/`
+- Save your credentials securely in a `.env` file in `dotconfig_handler/`
 - Create a local git repository to store your configurations
 - Perform an initial sync of your configuration files
 - Start monitoring for changes
@@ -174,11 +169,3 @@ Examples:
    - Copies the changed file to the repository
    - Commits the change
    - Pushes to GitHub
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
